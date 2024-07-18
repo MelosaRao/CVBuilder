@@ -5,11 +5,15 @@ import CertificationSection from "./components/CertificationSection"
 
 export default function Form({handleHeader, handleEducation, handleExperience, 
     education, deleteEducation, editEducation, experience, deleteExperience, editExperience,
-    certification, handleCertification, editCertification, deleteCertification}){
+    certification, handleCertification, editCertification, deleteCertification, 
+    loadTemplate, clearData}){
     const [eduaform, setEducform] = []
     return(
         <div className='Form' >
-
+        <div className='data'>
+            <button onClick={()=>clearData()}>Clear Data</button>
+            <button onClick={()=>loadTemplate()}>Load template</button>
+        </div>
         <div className='personal'>
         <h2>Personal Details</h2>
         <form onSubmit={(e)=>{
