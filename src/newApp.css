@@ -1,0 +1,152 @@
+#root {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  
+  }
+  
+.Form{
+    color: white;
+    border-radius: 2px;
+    min-width: 320px;
+    flex-basis: 1000px
+  }
+  
+  form{
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  
+  .header{
+    background-color: #1F2937;
+    color: white;
+    text-align: center;
+  }
+  
+  .header>div{
+    font-size: 25px;
+  }
+  
+  .header>p{
+    display: flex;
+    justify-content: center;
+    gap: 1cm;
+  }
+  
+  label{
+    text-align: right;
+  }
+  
+  .education,
+  .experience,
+  .certification{
+    color: black;
+  
+    margin-top: 0.5cm;
+    margin-bottom: 0.5cm;
+    font-size: 1em;
+    padding-left: 1cm;
+    padding-right: 1cm;
+  }
+  
+  .education div, .experience>div, .EduDiv , .CertDiv{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  
+  
+  
+.EduSection, .ExpSection, .personal, .CertSection, .data{
+    
+    padding: 10px;
+    margin: 10px;
+    background-color: #1F2937;
+    border-radius: 10px;
+    margin-top: 0;
+    box-shadow: 5px 5px 2px #000000;
+  }
+  
+.data{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    max-width: fit-content;
+    background-color: white;
+  }
+  button:hover {
+    border-color: #1F2937;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+  
+  body {
+    margin: 0;
+    background-color: blanchedalmond;
+
+  }
+  
+  :root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .EduDiv, .ExpDiv,.CertDiv {
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding: 5px 0;
+    margin: 10px 0;
+    align-items: center;
+  }
+  
+  .EduDiv div, .CertDiv div , .ExpDiv div{
+    display: flex;
+    gap: 10px;
+  }
+  .edit, .delete{
+    padding: 0px 5px ;
+  
+  }
+  
+  svg{
+    height: 25px;
+    width: auto;
+  }
+  
+  form div{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    grid-column: 1/3;
+    padding-top: 10px;
+  }
+  
+  
+  @media screen and (max-width: calc(320px + 290mm)) {
+    #root{
+      min-width: 210mm;
+      flex-direction: column;
+      align-items: center;
+    }
+  }

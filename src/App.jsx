@@ -1,8 +1,15 @@
 import { useState } from 'react'
-import './App.css'
+//import './App.css'
+import './newApp.css'
 import Form from './Form'
 import Page from './Page'
 import { v4 as uuidv4 } from 'uuid';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { PDFViewer } from '@react-pdf/renderer';
+import MyDocument from './MutiPage';
+
 
 function App() {
   const [header, setHeader] = useState({firstName:"John", lastName:"Doe" , email:"example@email.com", 
@@ -92,7 +99,7 @@ function loadTemplate(){
     title: "Software Engineer",
     from: "2019-01-08",
     to: "2023-01-08",
-    description: " Mauris id nulla in elit sodales mattis condimentum sit amet risus. Aenean facilisis ex vitae ipsum bibendum consequat. Cras sit amet maximus ipsum, at fringilla augue. Praesent id nisl egestas, accumsan nibh at, feugiat velit. Pellentesque metus eros, porttitor id aliquam a, pellentesque et neque.",
+    description: "Mauris id nulla in elit sodales mattis condimentum sit amet risus. Aenean facilisis ex vitae ipsum bibendum consequat. Cras sit amet maximus ipsum, at fringilla augue. Praesent id nisl egestas, accumsan nibh at, feugiat velit. Pellentesque metus eros, porttitor id aliquam a, pellentesque et neque.",
     id: 1
   },
   
@@ -101,7 +108,7 @@ function loadTemplate(){
     title: "Software Engineer",
     from: "2023-01-08",
     to: "2024-01-08",
-    description: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla eleifend tellus, ac hendrerit augue aliquam sed. Cras ipsum massa, luctus non sapien eget, faucibus placerat sapien. Mauris id nulla in elit sodales mattis condimentum sit amet risus. Aenean facilisis ex vitae ipsum bibendum consequat. ",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla eleifend tellus, ac hendrerit augue aliquam sed. Cras ipsum massa, luctus non sapien eget, faucibus placerat sapien. Mauris id nulla in elit sodales mattis condimentum sit amet risus. Aenean facilisis ex vitae ipsum bibendum consequat. ",
     technolgies: "HTML, CSS, Javascript, React",
     id: 2
   }
@@ -248,15 +255,19 @@ function loadTemplate(){
         return item
       }}))};
   
+  /*
+  <Page header={header} education={education} experience={experience} certification={certification}></Page>*/
   return (
     <>
-    <Form handleHeader = {handleHeader} handleEducation={handleEducation} 
+      <Form handleHeader = {handleHeader} handleEducation={handleEducation} 
     handleExperience={handleExperience} education={education} deleteEducation={deleteEducation} editEducation={editEducation}
     experience={experience} deleteExperience={deleteExperience} editExperience={editExperience}
     certification={certification} handleCertification={handleCertification} deleteCertification={deleteCertification} editCertification={editCertification}
     loadTemplate={loadTemplate} clearData={clearData}
     ></Form>
-    <Page header={header} education={education} experience={experience} certification={certification}></Page>
+   <PDFViewer  style={{ border: 0, height: '100vh', width: '100%', marginRight:"5px"}} >
+    <MyDocument header={header} education={education} experience={experience} certification={certification}/>
+    </PDFViewer>
     </>
   )
 }

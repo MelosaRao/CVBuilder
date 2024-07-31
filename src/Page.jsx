@@ -9,10 +9,13 @@ import Education from './components/Education'
 import Experience from './components/Exprinece'
 import Certification from './components/Certification'
 import FormatDate from './components/FormatDate'
+import MyDocument from './MutiPage';
 
 
 function Page({header,education,experience,certification}) {
   const targetRef = useRef();  
+
+  
 
 
   return (
