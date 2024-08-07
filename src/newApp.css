@@ -145,7 +145,7 @@
   }
   
   
-  @media screen and (max-width: calc(320px + 290mm)) {
+  @media screen and (max-width: calc(1000px)) {
     #root{
       min-width: 210mm;
       flex-direction: column;
